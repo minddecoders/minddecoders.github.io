@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sidra Khan | Cloud &amp; DevOps Engineer | AWS, Terraform, CI/CD</title>
+<meta name="description" content="Portfolio of Sidra Khan, a Computer Science graduate building hands-on Cloud and DevOps projects with AWS, Terraform, Docker and GitHub Actions.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sidra Khan | Cloud &amp; DevOps Portfolio">
+<meta property="og:description" content="Hands-on AWS, Terraform, Docker and GitHub Actions projects.">
+<meta property="og:url" content="https://minddecoders.github.io/">
+<meta name="theme-color" content="#0F172A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230F172A'/%3E%3Cpath d='M18 40a9 9 0 0 1 3-17 12 12 0 0 1 23 3 7 7 0 0 1 2 14z' fill='none' stroke='%2338BDF8' stroke-width='4'/%3E%3C/svg%3E">
+
+<style>
+/* ===== Color Palette & Theme Tokens ===== */
+:root[data-theme="dark"] {
+  --bg: #0B0F19;
+  --bg-translucent: rgba(11, 15, 25, 0.85);
+  --surface: #151D2A;
+  --surface-hover: #1C273A;
+  --line: #263346;
+  --line-hover: #38BDF8;
+  --text: #F8FAFC;
+  --muted: #94A3B8;
+  --accent: #38BDF8;
+  --accent-glow: rgba(56, 189, 248, 0.18);
+  --accent-ink: #0B0F19;
+  --link: #38BDF8;
+  --term-bg: #070A10;
+  --tag-bg: rgba(56, 189, 248, 0.08);
+  --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.6);
+  --grid-pattern: radial-gradient(circle, rgba(56, 189, 248, 0.07) 1px, transparent 1px);
+}
+
+:root[data-theme="light"] {
+  --bg: #F8FAFC;
+  --bg-translucent: rgba(248, 250, 252, 0.88);
+  --surface: #FFFFFF;
+  --surface-hover: #F1F5F9;
+  --line: #E2E8F0;
+  --line-hover: #0284C7;
+  --text: #0F172A;
+  --muted: #475569;
+  --accent: #0284C7;
+  --accent-glow: rgba(2, 132, 199, 0.12);
+  --accent-ink: #FFFFFF;
+  --link: #0284C7;
+  --term-bg: #0F172A;
+  --tag-bg: rgba(2, 132, 199, 0.08);
+  --shadow-sm: 0 4px 20px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 16px 30px rgba(15, 23, 42, 0.1);
+  --grid-pattern: radial-gradient(circle, rgba(2, 132, 199, 0.08) 1px, transparent 1px);
+}
+
+:root {
+  --font: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
+  --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  background-image: var(--grid-pattern);
+  background-size: 24px 24px;
+  color: var(--text);
+  font: 1rem/1.7 var(--font);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding: .5rem 1rem;
+  z-index: 99;
+  font-weight: 600;
+  border-radius: 0 0 6px 0;
+}
+
+.skip:focus {
+  left: 0;
+}
+
+/* ===== Navigation ===== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem clamp(1.5rem, 5vw, 4rem);
+  background: var(--bg-translucent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
+  transition: var(--transition);
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, var(--text) 30%, var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.links a {
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+.links a:hover, .links a.active {
+  color: var(--accent);
+}
+
+.theme, .menu-btn {
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.45rem 0.9rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.theme:hover, .menu-btn:hover {
+  border-color: var(--accent);
+  background: var(--surface-hover);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.menu-btn {
+  display: none;
+}
+
+/* ===== Main Layout & Hero ===== */
+main {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 5vw, 2.5rem);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+  min-height: calc(100vh - 5rem);
+  padding: 4rem 0;
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+  background: var(--accent-glow);
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 0 0 1.2rem 0;
+  border: 1px solid var(--accent);
+  box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.kicker::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+h1 {
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  margin: 0 0 0.8rem;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.headline {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+  opacity: 0.9;
+  margin: 0 0 1.2rem;
+}
+
+.lead {
+  max-width: 58ch;
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin: 0 0 1.8rem;
+}
+
+.btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.8rem 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.btn:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px var(--accent-glow);
+  color: var(--text);
+}
+
+.btn.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.btn.primary:hover {
+  opacity: 0.92;
+  box-shadow: 0 8px 24px var(--accent-glow);
+}
+
+.social {
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.hero-visual {
+  display: grid;
+  gap: 2rem;
+  justify-items: center;
+}
+
+.photo-wrapper {
+  position: relative;
+}
+
+.photo-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), transparent);
+  z-index: 0;
+  opacity: 0.7;
+}
+
+.photo {
+  position: relative;
+  z-index: 1;
+  width: min(210px, 50vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 3px solid var(--bg);
+  background: var(--surface);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Terminal Window Styling */
+.term-container {
+  width: 100%;
+  max-width: 380px;
+  background: var(--term-bg);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.term-container:hover {
+  border-color: var(--line-hover);
+  box-shadow: 0 10px 30px var(--accent-glow);
+}
+
+.term-topbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.term-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.term-dot.red { background: #FF5F56; }
+.term-dot.yellow { background: #FFBD2E; }
+.term-dot.green { background: #27C93F; }
+
+.term {
+  margin: 0;
+  padding: 1.2rem;
+  font: 0.83rem/1.6 var(--mono);
+  color: var(--link);
+  overflow-x: auto;
+}
+
+/* ===== Sections & Headings ===== */
+.sec {
+  padding: 5rem 0;
+  border-top: 1px solid var(--line);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 2.4rem);
+  margin: 0 0 0.8rem;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  color: var(--text);
+}
+
+h3 {
+  font-size: 1.15rem;
+  margin: 2rem 0 0.6rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.prose {
+  max-width: 72ch;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.prose p {
+  margin: 0 0 1.2rem;
+}
+
+.note {
+  color: var(--muted);
+  max-width: 72ch;
+  margin-bottom: 1.5rem;
+}
+
+.empty {
+  color: var(--muted);
+  margin: 0.4rem 0;
+}
+
+.ph {
+  background: var(--accent-glow);
+  border: 1px dashed var(--accent);
+  border-radius: 6px;
+  padding: 0.1rem 0.4rem;
+  font-size: 0.88em;
+  color: var(--accent);
+}
+
+/* ===== Grids & Cards ===== */
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.skills {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.projects {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr));
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.8rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.card:hover {
+  border-color: var(--line-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px var(--accent-glow);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.tags li {
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.35rem 0.85rem;
+  background: var(--tag-bg);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--text);
+  transition: var(--transition);
+}
+
+.tags li:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-glow);
+}
+
+.proj h3 {
+  color: var(--text);
+  font-size: 1.3rem;
+}
+
+.proj dt {
+  font-weight: 700;
+  margin-top: 1.2rem;
+  font-size: 0.92rem;
+  color: var(--text);
+}
+
+.proj dd {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.proj ul {
+  margin: 0.3rem 0 0;
+  padding-left: 1.2rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ===== Project Image Gallery Layout ===== */
+.project-img-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.img-card {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  transition: var(--transition);
+}
+
+.img-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+}
+
+.img-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: var(--bg-translucent);
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  backdrop-filter: blur(6px);
+  z-index: 2;
+  letter-spacing: 0.02em;
+}
+
+.img-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.img-card:hover img {
+  transform: scale(1.04);
+}
+
+.plinks {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* ===== Timeline & Contact ===== */
+.timeline {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0 0 0 1.6rem;
+  border-left: 2px solid var(--line);
+}
+
+.timeline li {
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: calc(-1.6rem - 7px);
+  top: 0.4rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-glow);
+}
+
+.meta {
+  color: var(--muted);
+  margin: 0.3rem 0 0.8rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+.timeline ul {
+  color: var(--muted);
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.contact {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.contact li {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.contact li:hover {
+  border-color: var(--line-hover);
+  transform: translateX(4px);
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+.contact span {
+  min-width: 7rem;
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* ===== Footer ===== */
+.foot {
+  border-top: 1px solid var(--line);
+  padding: 3rem clamp(1.5rem, 5vw, 4rem);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2rem;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--muted);
+  background: var(--surface);
+}
+
+.foot p {
+  margin: 0;
+}
+
+.foot a {
+  margin-right: 1.2rem;
+  font-weight: 500;
+}
+
+.foot .top {
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ===== Responsive Breakpoints ===== */
+@media (max-width: 820px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    padding: 3rem 0;
+  }
+  .menu-btn {
+    display: block;
+  }
+  .links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+    padding: 1.5rem clamp(1.5rem, 5vw, 3rem);
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    box-shadow: var(--shadow-lg);
+  }
+  .links.open {
+    display: flex;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <a class="brand" href="#home">Sidra Khan</a>
+  <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="links" aria-label="Open menu">Menu</button>
+  <nav id="links" class="links" aria-label="Main">
+    <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a>
+    <a href="#experience">Experience</a><a href="#education">Education</a><a href="#certifications">Certifications</a>
+    <a href="#cv">CV</a><a href="#contact">Contact</a>
+    <button id="themeBtn" class="theme" aria-label="Switch to light theme">Light</button>
+  </nav>
+</header>
+
+<main id="main">
+<section id="home" class="hero">
+  <div class="hero-text">
+    <p class="kicker">Cloud & DevOps Engineer</p>
+    <h1>Sidra Khan</h1>
+    <p class="headline">Aspiring Cloud & DevOps Engineer | AWS | Docker | Terraform | CI/CD Automation</p>
+    <p class="lead">I build and deploy cloud projects hands-on: provisioning AWS with Terraform, automating releases with GitHub Actions, and packaging apps with Docker. I’m looking for an entry-level Cloud or DevOps role where I can keep learning on real systems.</p>
+    <div class="btns">
+      <a class="btn primary" href="#projects">View My Projects</a>
+      <a class="btn" href="Sidra_Khan_CV.pdf" download>Download CV</a>
+      <a class="btn" href="#contact">Contact Me</a>
+    </div>
+    <p class="social"><a href="https://github.com/minddecoders" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/sidra" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://hub.docker.com/u/minddecoders" target="_blank" rel="noopener noreferrer">Docker Hub</a></p>
+  </div>
+  <div class="hero-visual">
+    <div class="photo-wrapper">
+      <div class="photo">
+        <img src="assets/picture.jpeg" alt="Sidra Khan">
+      </div>
+    </div>
+    <div class="term-container">
+      <div class="term-topbar">
+        <span class="term-dot red"></span>
+        <span class="term-dot yellow"></span>
+        <span class="term-dot green"></span>
+      </div>
+      <pre class="term" aria-hidden="true">$ terraform plan
+  + aws_vpc.main
+  + aws_ecs_service.app
+  + aws_lb.public
+$ git push origin main
+  workflow: deploy ... queued</pre>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="sec">
+  <h2>About me</h2>
+  <div class="prose">
+    <p>I hold a Bachelor of Science in Computer Science from Hazara University (October 2022 to June 2026). Since July 2026 I have been teaching myself Cloud and DevOps through structured, hands-on practice, with a focus on AWS.</p>
+    <p>My practice covers Linux administration and Bash scripting, networking fundamentals, and Terraform for AWS resources such as VPCs, subnets, security groups, IAM roles and EC2, with remote state in Amazon S3. I build GitHub Actions workflows that authenticate to AWS using OpenID Connect, and I use Docker and Docker Hub to package applications.</p>
+    <p>I’m especially interested in infrastructure automation, deployment pipelines, blue-green deployment strategies and cloud security, including secrets handling with Secrets Manager and KMS. My goal is a junior Cloud, DevOps or Platform role where I can contribute to automation while growing under experienced engineers.</p>
+  </div>
+</section>
+
+<section id="skills" class="sec">
+  <h2>Technical skills</h2>
+  <p class="note">Skills listed on my CV. Labels show what I have practiced, not equal depth in every tool.</p>
+  <div class="grid skills" id="skillGrid"></div>
+</section>
+
+<section id="projects" class="sec">
+  <h2>Projects</h2>
+  <p class="note">Independent learning projects. Repository links and diagrams are added as I publish them.</p>
+  <div class="grid projects" id="projectGrid"></div>
+</section>
+
+<section id="experience" class="sec">
+  <h2>Experience and practical learning</h2>
+  <h3>Employment</h3>
+  <div class="card" style="margin-bottom: 1.5rem;">
+    <h4>Aspiring Cloud &amp; DevOps Engineer</h4>
+    <p class="prose" style="margin: 0.5rem 0 0 0;">Currently building practical skills through independent AWS projects, infrastructure automation, and CI/CD pipelines.</p>
+  </div>
+
+  <h3>Internships</h3>
+  <p class="empty">No internships listed at this time.</p>
+
+  <h3>Independent learning and projects</h3>
+  <ol class="timeline">
+    <li>
+      <h4>Cloud &amp; DevOps self-directed learning and projects</h4>
+      <p class="meta">Mansehra, Pakistan · July 2026 to present</p>
+      <ul>
+        <li>Practicing Linux administration: permissions, users and groups, processes, services and monitoring.</li>
+        <li>Writing Bash scripts to automate common system administration tasks.</li>
+        <li>Practicing networking fundamentals: IP addressing, ports, DNS, SSH, HTTP/HTTPS, routing and troubleshooting.</li>
+        <li>Provisioning AWS infrastructure with Terraform, with remote state in S3, workspaces and environment-specific configuration.</li>
+        <li>Building GitHub Actions CI/CD workflows with secure AWS authentication through OIDC.</li>
+        <li>Building and publishing container images with Docker and Docker Hub.</li>
+        <li>Practicing blue-green deployments, multi-environment management, deployment approvals and resource cleanup workflows.</li>
+      </ul>
+    </li>
+  </ol>
+</section>
+
+<section id="education" class="sec">
+  <h2>Education</h2>
+  <ol class="timeline">
+    <li>
+      <h4>Bachelor of Science in Computer Science</h4>
+      <p class="meta">Hazara University, Mansehra · October 2022 to June 2026</p>
+      <p style="margin: 0.3rem 0; font-weight: 600; color: var(--accent);">Grade A &nbsp;·&nbsp; CGPA 3.82</p>
+    </li>
+  </ol>
+</section>
+
+<section id="certifications" class="sec">
+  <h2>Certifications and training</h2>
+  <h3>Completed</h3>
+  <p class="empty">No professional certifications completed yet.</p>
+
+  <h3>In progress</h3>
+  <div class="prose">
+    <p><strong>Self-directed Cloud &amp; DevOps learning, focusing on:</strong></p>
+    <ul>
+      <li>AWS cloud services and infrastructure</li>
+      <li>Terraform and Infrastructure as Code (IaC)</li>
+      <li>Docker and containerization</li>
+      <li>GitHub Actions and CI/CD automation</li>
+      <li>Linux and networking fundamentals</li>
+    </ul>
+  </div>
+</section>
+
+<section id="cv" class="sec">
+  <h2>Resume / CV</h2>
+  <p class="prose">My CV covers my education, hands-on Cloud &amp; DevOps practice and technical skills.</p>
+  <div class="btns">
+    <a class="btn primary" href="Sidra_Khan_CV.pdf" target="_blank" rel="noopener">View CV</a>
+    <a class="btn" href="Sidra_Khan_CV.pdf" download>Download CV</a>
+  </div>
+</section>
+
+<section id="contact" class="sec">
+  <h2>Contact</h2>
+  <p class="prose">The best way to reach me is by email or LinkedIn.</p>
+  <ul class="contact">
+    <li><span>Email</span><a href="mailto:sidra.minddecoders@gmail.com">sidra.minddecoders@gmail.com</a></li>
+    <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/sidra" target="_blank" rel="noopener noreferrer">linkedin.com/in/sidra</a></li>
+    <li><span>GitHub</span><a href="https://github.com/minddecoders" target="_blank" rel="noopener noreferrer">github.com/minddecoders</a></li>
+    <li><span>Docker Hub</span><a href="https://hub.docker.com/u/minddecoders" target="_blank" rel="noopener noreferrer">hub.docker.com/u/minddecoders</a></li>
+  </ul>
+</section>
+</main>
+
+<footer class="foot">
+  <p>© <span id="year">2026</span> Sidra Khan</p>
+  <p><a href="https://github.com/minddecoders" target="_blank" rel="noopener noreferrer">GitHub</a> <a href="https://www.linkedin.com/in/sidra" target="_blank" rel="noopener noreferrer">LinkedIn</a> <a href="mailto:sidra.minddecoders@gmail.com">Email</a></p>
+  <a class="top" href="#home">Back to top</a>
+</footer>
+
+<script>
+"use strict";
+
+/* ===== Skills ===== */
+const SKILLS = {
+  "Cloud and AWS": [
+    "Amazon Web Services (AWS)",
+    "AWS IAM",
+    "OIDC",
+    "Amazon S3",
+    "Amazon ECS",
+    "AWS Fargate",
+    "Elastic Load Balancing (ALB)",
+    "Amazon RDS",
+    "AWS Secrets Manager",
+    "AWS KMS",
+    "Amazon CloudWatch"
+  ],
+  "Infrastructure and Automation": [
+    "Terraform",
+    "Infrastructure as Code (IaC)",
+    "CI/CD",
+    "GitHub Actions",
+    "GitOps",
+    "Docker",
+    "Docker Hub"
+  ],
+  "Operating Systems and Networking": [
+    "Linux",
+    "Bash scripting",
+    "Networking fundamentals",
+    "DNS, SSH, HTTP/HTTPS"
+  ],
+  "Version Control": [
+    "Git",
+    "GitHub"
+  ]
+};
+
+/* ===== Projects ===== */
+const PROJECTS = [
+  {
+    title: "AWS Fargate Full-Stack Flower App",
+    overview:
+      "A full-stack application deployed on AWS, built to practice container deployment and secure infrastructure.",
+    problem:
+      "Run a React and Node.js app on managed containers with a private database, with all infrastructure defined as code.",
+    architecture:
+      "React/Vite frontend and Node.js/Express backend run on Amazon ECS Fargate behind an Application Load Balancer, with a private Amazon RDS MySQL database. Terraform provisions the infrastructure and GitHub Actions automates deployment.",
+    tech: [
+      "React",
+      "Vite",
+      "Node.js",
+      "Express",
+      "ECS Fargate",
+      "ALB",
+      "RDS MySQL",
+      "Terraform",
+      "GitHub Actions",
+      "CloudWatch"
+    ],
+    security: [
+      "Secrets Manager, KMS and Parameter Store used for configuration",
+      "CloudWatch logging",
+      "Private RDS database"
+    ],
+    role:
+      "Designed the architecture and wrote the infrastructure and workflows as an independent project.",
+    archImg: "assets/fullstack-structure-diagram.png",
+    deployImg: "assets/github-action-deployement.jpg",
+    repo: "https://github.com/minddecoders/aws-fargate-fullstack-flower-app",
+    demo: ""
+  },
+  {
+    title: "React Blue-Green Production Pipeline",
+    overview:
+      "A deployment pipeline for a React app that practices blue-green release strategy on AWS.",
+    problem:
+      "Release new versions with minimal downtime and a controlled approval step.",
+    architecture:
+      "Terraform-managed AWS infrastructure with GitHub Actions workflows for blue-green deployment, deployment approvals and resource cleanup.",
+    tech: [
+      "React",
+      "AWS",
+      "Terraform",
+      "GitHub Actions",
+      "Blue-green deployment"
+    ],
+    security: [
+      "OIDC authentication from GitHub Actions to AWS",
+      "Deployment approval step",
+      "Rollback workflow"
+    ],
+    role:
+      "Built the pipeline and infrastructure code as an independent project.",
+    archImg: "assets/Blue-Green Project Diagram.png",
+    deployImg: "assets/github-action-bluegreen.png",
+    repo: "https://github.com/minddecoders/react-blue-green-production-pipeline",
+    demo: ""
+  },
+  {
+    title: "React Cloud Deployment Enterprise Pipeline",
+    overview:
+      "A multi-environment CI/CD pipeline that provisions cloud infrastructure and deploys a React app.",
+    problem:
+      "Provision and deploy consistently across separate environments without manual steps.",
+    architecture:
+      "Terraform workspaces and environment-specific configuration with remote state in Amazon S3, plus GitHub Actions workflows for automated deployment.",
+    tech: [
+      "React",
+      "AWS",
+      "Terraform",
+      "S3 remote state",
+      "GitHub Actions"
+    ],
+    security: [
+      "OIDC-based AWS authentication"
+    ],
+    role:
+      "Designed and implemented the pipeline as an independent project.",
+    archImg: "assets/react-cloudeploye-diagram.png",
+    deployImg: "",
+    repo: "https://github.com/minddecoders/react-clouddeploye-enterprise-pipeline",
+    demo: ""
+  },
+  {
+    title: "AWS EC2 Auto Scaling DevOps Project",
+    overview:
+      "An EC2-based project practicing scalable, load-balanced infrastructure on AWS.",
+    problem:
+      "Keep an application available as demand changes.",
+    architecture:
+      "EC2 instances in a custom VPC with Auto Scaling and load balancing.",
+    tech: [
+      "EC2",
+      "Auto Scaling",
+      "VPC",
+      "Load balancing",
+      "Terraform",
+      "Linux"
+    ],
+    security: [
+      "Security groups and IAM roles",
+      "Monitoring and automation"
+    ],
+    role:
+      "Built the infrastructure as an independent project. [Ongoing]",
+    archImg: "",
+    deployImg: "",
+    repo: "",
+    demo: ""
+  }
+];
+
+/* ===== Helpers ===== */
+const esc = value =>
+  String(value).replace(/[&<>"]/g, char => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;"
+  })[char]);
+
+const mark = value =>
+  esc(value).replace(
+    /\[(Edit[^\]]*)\]/g,
+    '<span class="ph">[$1]</span>'
+  );
+
+/* ===== Render skills ===== */
+const skillGrid = document.getElementById("skillGrid");
+
+if (skillGrid) {
+  skillGrid.innerHTML = Object.entries(SKILLS)
+    .map(([category, items]) => `
+      <article class="card">
+        <h3>${esc(category)}</h3>
+        <ul class="tags">
+          ${items.map(item => `<li>${esc(item)}</li>`).join("")}
+        </ul>
+      </article>
+    `)
+    .join("");
+}
+
+/* ===== Render projects ===== */
+const projectGrid = document.getElementById("projectGrid");
+
+if (projectGrid) {
+  projectGrid.innerHTML = PROJECTS.map(project => {
+    const repoLink = project.repo
+      ? `<a href="${esc(project.repo)}" target="_blank" rel="noopener noreferrer">GitHub repository</a>`
+      : `<span class="ph">[Repository link coming soon]</span>`;
+
+    const imagesHtml = (project.archImg || project.deployImg) ? `
+      <div class="project-img-grid">
+        ${project.archImg ? `
+          <div class="img-card">
+            <span class="img-badge">Architecture Diagram</span>
+            <a href="${esc(project.archImg)}" target="_blank" rel="noopener noreferrer">
+              <img src="${esc(project.archImg)}" alt="${esc(project.title)} Architecture" loading="lazy">
+            </a>
+          </div>
+        ` : ""}
+        ${project.deployImg ? `
+          <div class="img-card">
+            <span class="img-badge">Deployment Workflow</span>
+            <a href="${esc(project.deployImg)}" target="_blank" rel="noopener noreferrer">
+              <img src="${esc(project.deployImg)}" alt="${esc(project.title)} Deployment" loading="lazy">
+            </a>
+          </div>
+        ` : ""}
+      </div>
+    ` : "";
+
+    return `
+      <article class="card proj">
+        <h3>${esc(project.title)}</h3>
+
+        <p>${mark(project.overview)}</p>
+
+        <dl>
+          <dt>Problem and solution</dt>
+          <dd>${mark(project.problem)}</dd>
+
+          <dt>Architecture and workflow</dt>
+          <dd>${mark(project.architecture)}</dd>
+
+          <dt>Security and automation</dt>
+          <dd>
+            <ul>
+              ${project.security
+                .map(item => `<li>${mark(item)}</li>`)
+                .join("")}
+            </ul>
+          </dd>
+
+          <dt>My contribution</dt>
+          <dd>${mark(project.role)}</dd>
+        </dl>
+
+        <ul class="tags" style="margin-top: 1.2rem">
+          ${project.tech
+            .map(item => `<li>${esc(item)}</li>`)
+            .join("")}
+        </ul>
+
+        ${imagesHtml}
+
+        <div class="plinks">
+          ${repoLink}
+        </div>
+      </article>
+    `;
+  }).join("");
+}
+
+/* ===== Mobile menu ===== */
+const menuBtn = document.getElementById("menuBtn");
+const links = document.getElementById("links");
+
+if (menuBtn && links) {
+  const setMenu = isOpen => {
+    links.classList.toggle("open", isOpen);
+    menuBtn.setAttribute("aria-expanded", String(isOpen));
+    menuBtn.setAttribute(
+      "aria-label",
+      isOpen ? "Close menu" : "Open menu"
+    );
+  };
+
+  menuBtn.addEventListener("click", () => {
+    setMenu(!links.classList.contains("open"));
+  });
+
+  links.addEventListener("click", event => {
+    if (event.target.closest("a")) {
+      setMenu(false);
+    }
+  });
+
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+      setMenu(false);
+    }
+  });
+}
+
+/* ===== Dark/light theme toggle ===== */
+const root = document.documentElement;
+const themeBtn = document.getElementById("themeBtn");
+
+const applyTheme = theme => {
+  root.dataset.theme = theme;
+
+  if (themeBtn) {
+    themeBtn.textContent = theme === "dark" ? "Light" : "Dark";
+    themeBtn.setAttribute(
+      "aria-label",
+      `Switch to ${theme === "dark" ? "light" : "dark"} theme`
+    );
+  }
+};
+
+let savedTheme = null;
+
+try {
+  savedTheme = localStorage.getItem("theme");
+} catch (error) {
+  // Storage may be unavailable.
+}
+
+const preferredTheme =
+  window.matchMedia &&
+  window.matchMedia("(prefers-color-scheme: light)").matches
+    ? "light"
+    : "dark";
+
+applyTheme(
+  savedTheme === "light" || savedTheme === "dark"
+    ? savedTheme
+    : preferredTheme
+);
+
+if (themeBtn) {
+  themeBtn.addEventListener("click", () => {
+    const nextTheme =
+      root.dataset.theme === "dark" ? "light" : "dark";
+
+    applyTheme(nextTheme);
+
+    try {
+      localStorage.setItem("theme", nextTheme);
+    } catch (error) {
+      // Theme still works for current session.
+    }
+  });
+}
+
+/* ===== Highlight active navigation section ===== */
+const navLinks = links
+  ? [...links.querySelectorAll('a[href^="#"]')]
+  : [];
+
+if ("IntersectionObserver" in window && navLinks.length > 0) {
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            link.classList.toggle(
+              "active",
+              link.getAttribute("href") === `#${entry.target.id}`
+            );
+          });
+        }
+      });
+    },
+    {
+      rootMargin: "-45% 0px -50% 0px"
+    }
+  );
+
+  document.querySelectorAll("main section[id]").forEach(section => {
+    observer.observe(section);
+  });
+}
+
+/* ===== Automatic footer year ===== */
+const yearElement = document.getElementById("year");
+
+if (yearElement) {
+  yearElement.textContent = new Date().getFullYear();
+}
+</script>
+</body>
+</html>
