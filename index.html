@@ -9,49 +9,49 @@
 <meta property="og:title" content="Sidra Khan | Cloud &amp; DevOps Portfolio">
 <meta property="og:description" content="Hands-on AWS, Terraform, Docker and GitHub Actions projects.">
 <meta property="og:url" content="https://minddecoders.github.io/">
-<meta name="theme-color" content="#0F172A">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230F172A'/%3E%3Cpath d='M18 40a9 9 0 0 1 3-17 12 12 0 0 1 23 3 7 7 0 0 1 2 14z' fill='none' stroke='%2338BDF8' stroke-width='4'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#181311">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23181311'/%3E%3Cpath d='M18 40a9 9 0 0 1 3-17 12 12 0 0 1 23 3 7 7 0 0 1 2 14z' fill='none' stroke='%23F97316' stroke-width='4'/%3E%3C/svg%3E">
 
 <style>
-/* ===== Color Palette & Theme Tokens ===== */
+/* ===== Professional Orange Color Palette & Theme Tokens ===== */
 :root[data-theme="dark"] {
-  --bg: #0B0F19;
-  --bg-translucent: rgba(11, 15, 25, 0.85);
-  --surface: #151D2A;
-  --surface-hover: #1C273A;
-  --line: #263346;
-  --line-hover: #38BDF8;
-  --text: #F8FAFC;
-  --muted: #94A3B8;
-  --accent: #38BDF8;
-  --accent-glow: rgba(56, 189, 248, 0.18);
-  --accent-ink: #0B0F19;
-  --link: #38BDF8;
-  --term-bg: #070A10;
-  --tag-bg: rgba(56, 189, 248, 0.08);
-  --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.6);
-  --grid-pattern: radial-gradient(circle, rgba(56, 189, 248, 0.07) 1px, transparent 1px);
+  --bg: #0D0A08;
+  --bg-translucent: rgba(13, 10, 8, 0.85);
+  --surface: #191411;
+  --surface-hover: #231B17;
+  --line: #322620;
+  --line-hover: #F97316;
+  --text: #F9FAFB;
+  --muted: #A1A1AA;
+  --accent: #F97316; /* Vibrant Orange */
+  --accent-glow: rgba(249, 115, 22, 0.18);
+  --accent-ink: #0D0A08;
+  --link: #FB923C;
+  --term-bg: #070504;
+  --tag-bg: rgba(249, 115, 22, 0.1);
+  --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.7);
+  --grid-pattern: radial-gradient(circle, rgba(249, 115, 22, 0.07) 1px, transparent 1px);
 }
 
 :root[data-theme="light"] {
-  --bg: #F8FAFC;
-  --bg-translucent: rgba(248, 250, 252, 0.88);
+  --bg: #FAFAFA;
+  --bg-translucent: rgba(250, 250, 250, 0.88);
   --surface: #FFFFFF;
-  --surface-hover: #F1F5F9;
-  --line: #E2E8F0;
-  --line-hover: #0284C7;
-  --text: #0F172A;
-  --muted: #475569;
-  --accent: #0284C7;
-  --accent-glow: rgba(2, 132, 199, 0.12);
+  --surface-hover: #FFF7ED;
+  --line: #E4E4E7;
+  --line-hover: #EA580C;
+  --text: #18181B;
+  --muted: #52525B;
+  --accent: #EA580C; /* Deep Amber-Orange */
+  --accent-glow: rgba(234, 88, 12, 0.12);
   --accent-ink: #FFFFFF;
-  --link: #0284C7;
-  --term-bg: #0F172A;
-  --tag-bg: rgba(2, 132, 199, 0.08);
-  --shadow-sm: 0 4px 20px rgba(15, 23, 42, 0.06);
-  --shadow-lg: 0 16px 30px rgba(15, 23, 42, 0.1);
-  --grid-pattern: radial-gradient(circle, rgba(2, 132, 199, 0.08) 1px, transparent 1px);
+  --link: #EA580C;
+  --term-bg: #18181B;
+  --tag-bg: rgba(234, 88, 12, 0.08);
+  --shadow-sm: 0 4px 20px rgba(24, 24, 27, 0.06);
+  --shadow-lg: 0 16px 30px rgba(24, 24, 27, 0.1);
+  --grid-pattern: radial-gradient(circle, rgba(234, 88, 12, 0.07) 1px, transparent 1px);
 }
 
 :root {
@@ -583,7 +583,7 @@ h4 {
   font-weight: 600;
 }
 
-/* ===== Timeline & Contact ===== */
+/* ===== Timeline & Contact (Fixed Double Bullets) ===== */
 .timeline {
   list-style: none;
   margin: 1.5rem 0 0;
@@ -594,6 +594,7 @@ h4 {
 .timeline li {
   position: relative;
   padding-bottom: 1.5rem;
+  list-style: none;
 }
 
 .timeline li::before {
@@ -618,7 +619,8 @@ h4 {
 .timeline ul {
   color: var(--muted);
   padding-left: 1.2rem;
-  margin: 0;
+  margin: 0.5rem 0 0 0;
+  list-style-type: disc;
 }
 
 .contact {
@@ -788,7 +790,7 @@ h4 {
       </div>
       <pre class="term" aria-hidden="true">$ terraform plan
   + aws_vpc.main
-  + aws_ecs_service.app
+  + aws_autoscaling_group.app
   + aws_lb.public
 $ git push origin main
   workflow: deploy ... queued</pre>
@@ -1043,28 +1045,40 @@ const PROJECTS = [
   {
     title: "AWS EC2 Auto Scaling DevOps Project",
     overview:
-      "An EC2-based project practicing scalable, load-balanced infrastructure on AWS.",
+      "A hands-on AWS DevOps project focused on infrastructure automation, application deployment, scalability, and monitoring.",
     problem:
-      "Keep an application available as demand changes.",
+      "Designed a scalable, load-balanced infrastructure to help maintain application availability and distribute incoming traffic across EC2 instances.",
     architecture:
-      "EC2 instances in a custom VPC with Auto Scaling and load balancing.",
+      "Custom AWS VPC with public and private subnets, Internet Gateway, route tables, security groups, EC2 instances managed by an Auto Scaling Group, Application Load Balancer and target group, Docker-based application deployment using Amazon ECR, GitHub Actions CI/CD pipeline for automated builds and deployment, and CloudWatch metrics, alarms, and a custom monitoring dashboard.",
     tech: [
-      "EC2",
+      "AWS EC2",
       "Auto Scaling",
       "VPC",
-      "Load balancing",
+      "Application Load Balancer",
       "Terraform",
+      "Docker",
+      "Amazon ECR",
+      "GitHub Actions",
+      "CloudWatch",
       "Linux"
     ],
     security: [
-      "Security groups and IAM roles",
-      "Monitoring and automation"
+      "IAM roles and least-privilege permissions",
+      "GitHub Actions authentication with AWS",
+      "Terraform modules, variables, outputs, and remote state",
+      "Automated infrastructure provisioning and updates",
+      "Application health checks and infrastructure monitoring",
+      "Cost awareness and responsible AWS resource management"
     ],
     role:
-      "Built the infrastructure as an independent project. [Ongoing]",
-    archImg: "",
-    deployImg: "",
-    repo: "",
+      "Independently built, deployed, and troubleshot the project while gaining practical experience with AWS infrastructure, automation, monitoring, and DevOps workflows.",
+    archImg: "assets/architecure-diagram.webp",
+    deployImg: "assets/service status .webp",
+    extraImgs: [
+      { badge: "CloudWatch Metrics", url: "assets/AWS ClouWatch Matrics.webp" },
+      { badge: "CloudWatch Alarm", url: "assets/ClouWatch Alarm.webp" }
+    ],
+    repo: "https://github.com/minddecoders/aws-ec2-autoscaling-devops",
     demo: ""
   }
 ];
@@ -1109,7 +1123,19 @@ if (projectGrid) {
       ? `<a href="${esc(project.repo)}" target="_blank" rel="noopener noreferrer">GitHub repository</a>`
       : `<span class="ph">[Repository link coming soon]</span>`;
 
-    const imagesHtml = (project.archImg || project.deployImg) ? `
+    let extraImagesHtml = "";
+    if (project.extraImgs && project.extraImgs.length > 0) {
+      extraImagesHtml = project.extraImgs.map(img => `
+        <div class="img-card">
+          <span class="img-badge">${esc(img.badge)}</span>
+          <a href="${esc(img.url)}" target="_blank" rel="noopener noreferrer">
+            <img src="${esc(img.url)}" alt="${esc(project.title)} ${esc(img.badge)}" loading="lazy">
+          </a>
+        </div>
+      `).join("");
+    }
+
+    const imagesHtml = (project.archImg || project.deployImg || extraImagesHtml) ? `
       <div class="project-img-grid">
         ${project.archImg ? `
           <div class="img-card">
@@ -1127,6 +1153,7 @@ if (projectGrid) {
             </a>
           </div>
         ` : ""}
+        ${extraImagesHtml}
       </div>
     ` : "";
 
@@ -1289,6 +1316,260 @@ const yearElement = document.getElementById("year");
 if (yearElement) {
   yearElement.textContent = new Date().getFullYear();
 }
+</script>
+
+<!-- Embedded pro.js script -->
+<script>
+(function () {
+  "use strict";
+  var D = document, R = D.documentElement;
+  var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- fonts ---------- */
+  var fl = D.createElement("link");
+  fl.rel = "stylesheet";
+  fl.href = "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap";
+  D.head.appendChild(fl);
+
+  /* ---------- styles (override the original, same selectors, loaded last) ---------- */
+  var css = `
+:root{--font:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--head:"Sora","Manrope",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;--g1:#F97316;--g2:#FBBF24;--g3:#F43F5E;--grad:linear-gradient(120deg,var(--g1),var(--g2) 55%,var(--g3))}
+:root[data-theme="light"]{--g1:#EA580C;--g2:#D97706;--g3:#E11D48}
+:root[data-theme="dark"]{--bg:#0A0706;--surface:#15100E}
+::selection{background:var(--g1);color:#fff}
+h1,h2,h3,h4,.brand{font-family:var(--head)}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(60vw 50vh at 85% 8%,rgba(249,115,22,.16),transparent 70%),radial-gradient(50vw 45vh at 5% 55%,rgba(244,63,94,.09),transparent 70%),radial-gradient(45vw 40vh at 70% 95%,rgba(251,191,36,.07),transparent 70%)}
+#sp{position:fixed;top:0;left:0;width:100%;height:3px;z-index:200;background:var(--grad);transform-origin:left;transform:scaleX(0)}
+.nav::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:linear-gradient(90deg,transparent,var(--g1),transparent);opacity:.5}
+h1{width:fit-content;background:linear-gradient(110deg,var(--text) 0%,var(--text) 28%,var(--g2) 62%,var(--g1));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+h2::after{content:"";display:block;width:56px;height:4px;border-radius:4px;margin-top:.7rem;background:var(--grad)}
+.sec{border-top:1px solid transparent;border-image:linear-gradient(90deg,transparent,var(--line) 20%,var(--line) 80%,transparent) 1}
+.hero{position:relative;isolation:isolate}
+#hero3d{position:absolute;top:-4rem;bottom:-4rem;left:50%;width:100vw;height:calc(100% + 8rem);transform:translateX(-50%);z-index:-1;pointer-events:none;-webkit-mask-image:linear-gradient(transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(transparent,#000 14%,#000 86%,transparent)}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hero-text>*{animation:rise .8s cubic-bezier(.16,1,.3,1) both}
+.hero-text>:nth-child(2){animation-delay:.07s}.hero-text>:nth-child(3){animation-delay:.14s}.hero-text>:nth-child(4){animation-delay:.21s}.hero-text>:nth-child(5){animation-delay:.28s}.hero-text>:nth-child(6){animation-delay:.35s}
+.photo-wrapper,.term-container{animation:rise .9s .3s cubic-bezier(.16,1,.3,1) both}
+.photo-wrapper::before{inset:-6px;background:conic-gradient(from 200deg,var(--g1),var(--g2),var(--g3),var(--g1));opacity:.95}
+.photo-wrapper::after{content:"";position:absolute;inset:-28px;border-radius:50%;background:radial-gradient(closest-side,var(--accent-glow),transparent);z-index:-1}
+.ini{display:grid;place-items:center;width:100%;height:100%;font:800 3.4rem var(--head);background:var(--grad);color:#fff}
+.term-container{background:rgba(10,8,7,.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.btn.primary{background:linear-gradient(120deg,var(--g1),var(--g3));border-color:transparent}
+.btn.primary:hover{box-shadow:0 10px 28px rgba(244,63,94,.28)}
+.card{position:relative;background:linear-gradient(160deg,rgba(249,115,22,.07),transparent 45%),var(--surface)}
+.card:hover{border-color:transparent;background:linear-gradient(var(--surface),var(--surface)) padding-box,var(--grad) border-box}
+.card::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(380px circle at var(--mx,50%) var(--my,50%),rgba(249,115,22,.15),transparent 45%)}
+.card:hover::after{opacity:1}
+.card.tilt{transition:box-shadow .3s,border-color .3s}
+.timeline{border-image:linear-gradient(to bottom,var(--g1),var(--line) 70%) 1}
+.timeline li::before{background:var(--grad)}
+.foot{background:linear-gradient(180deg,var(--surface),var(--bg))}
+`;
+  var st = D.createElement("style");
+  st.id = "pro-style";
+  st.textContent = css;
+  D.head.appendChild(st);
+
+  /* ---------- scroll progress ---------- */
+  var sp = D.createElement("div");
+  sp.id = "sp";
+  sp.setAttribute("aria-hidden", "true");
+  D.body.appendChild(sp);
+  var sy = 0;
+  function onScroll() {
+    sy = window.scrollY || 0;
+    var m = R.scrollHeight - innerHeight;
+    sp.style.transform = "scaleX(" + (m > 0 ? Math.min(1, sy / m) : 0) + ")";
+  }
+  addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  /* ---------- profile photo fallback ---------- */
+  var im = D.querySelector(".photo img");
+  function ini() {
+    var s = D.createElement("span");
+    s.className = "ini";
+    s.textContent = "SM";
+    im.replaceWith(s);
+  }
+  if (im) {
+    if (im.complete && im.naturalWidth === 0) ini();
+    else im.addEventListener("error", ini, { once: true });
+  }
+
+  /* ---------- 3D card tilt (mouse only) ---------- */
+  var cur = null;
+  function clear() {
+    if (cur) { cur.style.transform = ""; cur.classList.remove("tilt"); cur = null; }
+  }
+  if (!reduce) {
+    D.addEventListener("pointermove", function (e) {
+      if (e.pointerType !== "mouse") return;
+      var c = e.target.closest && e.target.closest(".card");
+      if (c !== cur) clear();
+      if (!c) return;
+      var b = c.getBoundingClientRect(), x = (e.clientX - b.left) / b.width, y = (e.clientY - b.top) / b.height;
+      cur = c;
+      c.classList.add("tilt");
+      c.style.setProperty("--mx", (x * 100) + "%");
+      c.style.setProperty("--my", (y * 100) + "%");
+      c.style.transform = "perspective(900px) rotateX(" + ((0.5 - y) * 5) + "deg) rotateY(" + ((x - 0.5) * 6) + "deg) translateY(-4px)";
+    });
+    D.addEventListener("pointerleave", clear);
+  }
+
+  /* ---------- 3D hero scene ---------- */
+  function boot() {
+    var hero = D.querySelector(".hero");
+    if (!hero || !window.THREE) return;
+    var T = THREE, cv = D.createElement("canvas"), rd;
+    cv.id = "hero3d";
+    cv.setAttribute("aria-hidden", "true");
+    hero.insertBefore(cv, hero.firstChild);
+    try { rd = new T.WebGLRenderer({ canvas: cv, alpha: true, antialias: true }); }
+    catch (e) { cv.remove(); return; }
+    rd.setPixelRatio(Math.min(devicePixelRatio || 1, 2));
+
+    var sc = new T.Scene(), cam = new T.PerspectiveCamera(40, 1, 0.1, 50), rig = new T.Group();
+    cam.position.z = 9;
+    sc.add(rig);
+
+    var cols = [new T.Color(), new T.Color(), new T.Color()];
+    function palette() {
+      var l = R.dataset.theme === "light";
+      cols[0].set(l ? "#EA580C" : "#F97316");
+      cols[1].set(l ? "#D97706" : "#FBBF24");
+      cols[2].set(l ? "#E11D48" : "#F43F5E");
+    }
+    palette();
+
+    /* Orbiting "instances" that scale out and back in, like an Auto Scaling Group */
+    var defs = [
+      { r: 1.9, n: 5, t: [0.5, 0, 0.2], sp: 0.22 },
+      { r: 2.6, n: 7, t: [-0.35, 0.3, -0.25], sp: -0.16 },
+      { r: 3.3, n: 9, t: [0.15, -0.4, 0.5], sp: 0.11 }
+    ];
+    var box = new T.BoxGeometry(1, 1, 1), edge = new T.EdgesGeometry(box), cubes = [], rings = [];
+    defs.forEach(function (g, gi) {
+      var grp = new T.Group(), pts = [], i;
+      grp.rotation.set(g.t[0], g.t[1], g.t[2]);
+      grp.updateMatrix();
+      rig.add(grp);
+      for (i = 0; i <= 96; i++) pts.push(new T.Vector3(Math.cos(i / 96 * 6.2832) * g.r, 0, Math.sin(i / 96 * 6.2832) * g.r));
+      var ln = new T.Line(new T.BufferGeometry().setFromPoints(pts), new T.LineBasicMaterial({ color: cols[gi], transparent: true, opacity: 0.28 }));
+      grp.add(ln);
+      rings.push({ ln: ln, gi: gi });
+      for (i = 0; i < g.n; i++) {
+        var ci = (gi + i) % 3, m = new T.Group();
+        var e = new T.LineSegments(edge, new T.LineBasicMaterial({ color: cols[ci], transparent: true, opacity: 0.95 }));
+        var f = new T.Mesh(box, new T.MeshBasicMaterial({ color: cols[ci], transparent: true, opacity: 0.14 }));
+        m.add(e, f);
+        grp.add(m);
+        cubes.push({ m: m, g: g, grp: grp, a0: i / g.n * 6.2832, ph: Math.random() * 6.28, sz: 0.17 + Math.random() * 0.12, ci: ci, e: e, f: f });
+      }
+    });
+
+    var lg = new T.BufferGeometry(), la = new Float32Array(cubes.length * 6);
+    lg.setAttribute("position", new T.BufferAttribute(la, 3));
+    var lines = new T.LineSegments(lg, new T.LineBasicMaterial({ color: cols[0], transparent: true, opacity: 0.2 }));
+    lines.frustumCulled = false;
+    rig.add(lines);
+
+    var N = 180, pa = new Float32Array(N * 3), k;
+    for (k = 0; k < N; k++) {
+      var rr = 3.5 + Math.random() * 3.5, u = Math.random() * 6.28, w = Math.acos(2 * Math.random() - 1);
+      pa[k * 3] = rr * Math.sin(w) * Math.cos(u);
+      pa[k * 3 + 1] = rr * Math.cos(w) * 0.7;
+      pa[k * 3 + 2] = rr * Math.sin(w) * Math.sin(u);
+    }
+    var pg = new T.BufferGeometry();
+    pg.setAttribute("position", new T.BufferAttribute(pa, 3));
+    var dust = new T.Points(pg, new T.PointsMaterial({ color: cols[1], size: 0.035, transparent: true, opacity: 0.6 }));
+    rig.add(dust);
+
+    function recolor() {
+      rings.forEach(function (r) { r.ln.material.color.copy(cols[r.gi]); });
+      cubes.forEach(function (c) { c.e.material.color.copy(cols[c.ci]); c.f.material.color.copy(cols[c.ci]); });
+      lines.material.color.copy(cols[0]);
+      dust.material.color.copy(cols[1]);
+    }
+
+    var mx = 0, my = 0, tx = 0, ty = 0, v = new T.Vector3(), clock = new T.Clock(), raf = 0, vis = true;
+
+    function draw(t) {
+      cubes.forEach(function (c, i) {
+        var a = c.a0 + t * c.g.sp, s = Math.max(0, Math.min(1, (Math.sin(t * 0.55 + c.ph) + 0.4) * 1.6));
+        s = s * s * (3 - 2 * s);
+        c.m.position.set(Math.cos(a) * c.g.r, 0, Math.sin(a) * c.g.r);
+        c.m.rotation.set(t * 0.4 + c.ph, t * 0.3, 0);
+        c.m.scale.setScalar(c.sz * s + 0.0001);
+        v.copy(c.m.position).applyMatrix4(c.grp.matrix);
+        la[i * 6] = la[i * 6 + 1] = la[i * 6 + 2] = 0;
+        la[i * 6 + 3] = s > 0.05 ? v.x : 0;
+        la[i * 6 + 4] = s > 0.05 ? v.y : 0;
+        la[i * 6 + 5] = s > 0.05 ? v.z : 0;
+      });
+      lg.attributes.position.needsUpdate = true;
+      dust.rotation.y = t * 0.02;
+      rig.rotation.y = t * 0.08 + sy * 0.0006 + tx * 0.4;
+      rig.rotation.x = ty * 0.2;
+      rd.render(sc, cam);
+    }
+    function loop() {
+      raf = requestAnimationFrame(loop);
+      tx += (mx - tx) * 0.05;
+      ty += (my - ty) * 0.05;
+      draw(clock.getElapsedTime());
+    }
+    function start() { if (!raf && !reduce && vis && !D.hidden) loop(); }
+    function stop() { cancelAnimationFrame(raf); raf = 0; }
+
+    /* Centre the scene on the profile photo, whatever the screen size */
+    function fit() {
+      var W = cv.clientWidth, H = cv.clientHeight;
+      if (!W || !H) return;
+      rd.setSize(W, H, false);
+      cam.aspect = W / H;
+      cam.updateProjectionMatrix();
+      var hh = Math.tan(20 * Math.PI / 180) * 9, hw = hh * cam.aspect, px = W * 0.7, py = H * 0.5;
+      var pw = D.querySelector(".photo-wrapper");
+      if (pw) {
+        var b = pw.getBoundingClientRect(), c = cv.getBoundingClientRect();
+        px = b.left + b.width / 2 - c.left;
+        py = b.top + b.height / 2 - c.top;
+      }
+      rig.position.set((px / W * 2 - 1) * hw, -(py / H * 2 - 1) * hh, 0);
+      rig.scale.setScalar(Math.max(0.4, Math.min(0.85, hw * 2 / 13)));
+      if (reduce || !raf) draw(reduce ? 4 : clock.getElapsedTime());
+    }
+
+    addEventListener("pointermove", function (e) {
+      mx = (e.clientX / innerWidth - 0.5) * 2;
+      my = (e.clientY / innerHeight - 0.5) * 2;
+    }, { passive: true });
+    if ("ResizeObserver" in window) new ResizeObserver(fit).observe(hero);
+    addEventListener("resize", fit);
+    addEventListener("load", fit);
+    setTimeout(fit, 1300);
+    D.addEventListener("visibilitychange", function () { D.hidden ? stop() : start(); });
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (en) { vis = en[0].isIntersecting; vis ? start() : stop(); }).observe(hero);
+    }
+    new MutationObserver(function () { palette(); recolor(); if (reduce) fit(); })
+      .observe(R, { attributes: true, attributeFilter: ["data-theme"] });
+
+    fit();
+    start();
+  }
+
+  if (window.THREE) boot();
+  else {
+    var s = D.createElement("script");
+    s.src = "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js";
+    s.onload = boot;
+    D.head.appendChild(s);
+  }
+})();
 </script>
 </body>
 </html>
